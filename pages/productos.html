@@ -110,7 +110,7 @@
         </div>
     </div>
 
-    <div id="card" class="pago-tarjeta">
+    <div class="pago-tarjeta">
         <div id="contenedor_tarjeta" class="modal_tarjeta_container">
             <h4>Pago con tarjeta</h4>
 
@@ -122,7 +122,7 @@
                 <div class="flexbox">
                     <div class="grupo2" id="nombre">
                         <p class="label p_tarjeta">Nombre Tarjeta</p>
-                        <p class="nombre p_tarjeta">jhon doe</p>
+                        <p class="nombre p_tarjeta">Nombre y Apellido</p>
                     </div>
                     <div class="grupo2" id="codigo">
                         <p class="label p_tarjeta">CCV</p>
@@ -130,14 +130,17 @@
                     </div>
                 </div>
             </div>
-            <label class="form-label">Nombre</label>
-            <input id="inputNombre" type="text" class="form-control" placeholder="Nombre">
-            <label class="form-label">N° de tarjeta</label>
-            <input id="inputNumero" type="text" class="form-control" maxlength="19" placeholder="XXXX XXXX XXXX XXXX">
-            <label class="form-label">CCV</label>
-            <input id="inputCodigo" type="text" class="form-control" placeholder="XXX">
+            <div id="inputsTarjeta">
+                <label for="inputNombre" class="form-label">Nombre</label>
+                <input id="inputNombre" type="text" class="form-control" placeholder="Nombre y Apellido" required>
+                <label for="inputNumero" class="form-label">N° de tarjeta</label>
+                <input id="inputNumero" type="text" class="form-control" maxlength="19"
+                    placeholder="XXXX XXXX XXXX XXXX" required>
+                <label for="inputCodigo" class="form-label">CCV</label>
+                <input id="inputCodigo" type="text" class="form-control" placeholder="XXX" maxlength="3" required>
 
-            <button type="button" class="modal_close">Finalizar compra</button>
+                <button type="button" type="submit" class="modal_close">Finalizar compra</button>
+            </div>
         </div>
     </div>
 

@@ -199,23 +199,51 @@ finalizarCompra.addEventListener('click', (e) => {
 });
 
 //LLENAR TARJETA CON DATOS
-const datosTarjeta = document.getElementById('card');
+const datosTarjeta = document.querySelector('#inputsTarjeta');
+const numeroTarjeta = document.querySelector('#contenedor_tarjeta .numero');
+const nombreTarjeta = document.querySelector('#contenedor_tarjeta .nombre');
+const codigoTarjeta = document.querySelector('#contenedor_tarjeta .codigo');
 
-datosTarjeta.contenedor_tarjeta.inputNumero.addEventListener('keyup', (e)=>{
+datosTarjeta.querySelector('#inputNumero').addEventListener('keyup', (e)=>{
+    console.log(e);
     let valorInput = e.target.value;
-    datosTarjeta.inputNumero = valorInput
+    datosTarjeta.querySelector('#inputNumero').value = valorInput
     .replace(/\s/g, '')
-    .replace(/\D/g, '');
+    .replace(/\D/g, '')
+    .replace(/([0-9]{4})/g, '$1 ')
+    .trim();
+    console.log(valorInput)
+
+    numeroTarjeta.textContent = valorInput;
+
+    if(valorInput == ''){
+        numeroTarjeta.textContent = '#### #### #### ####'
+    }
+
 
  })
 
- datosTarjeta.contenedor_tarjeta.inputNombre.addEventListener('keyup', (e)=>{
+ datosTarjeta.querySelector('#inputNombre').addEventListener('keyup', (e)=>{
     let valorInput = e.target.value;
 
-    datosTarjeta.contenedor_tarjeta.inputNombre = valorInput.replace(/[0-9]/g, '');
-    nombre
+    datosTarjeta.querySelector('#inputNombre').value = valorInput.replace(/[0-9]/g, '');
+    nombreTarjeta.textContent = valorInput
+    if(valorInput == ''){
+        nombreTarjeta.textContent = 'Nombre y Apellido'
+    }
  })
 
+ datosTarjeta.querySelector('#inputCodigo').addEventListener('keyup', (e)=>{
+     let valorInput = e.target.value;
+
+     datosTarjeta.querySelector('#inputCodigo').value = datosTarjeta.querySelector('#inputCodigo').value
+     .replace(/\s/g, '')
+     .replace(/\D/g, '');
+
+     codigoTarjeta.textContent = valorInput;
+
+
+ })
 
 
 //MUESTRO PRODUCTOS 
