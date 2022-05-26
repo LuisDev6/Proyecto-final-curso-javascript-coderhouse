@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="../css/styles.css">
+    <title>MyO Artesanal</title>
+</head>
+
+
+<body class="body">
+    <header class="header fixed-top">
+        <nav class="navbar navbar-expand-lg">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="../index.html"><img src="/images/logo150.webp" alt="logo"></a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"><i class="large material-icons">dehaze</i></span>
+                </button>
+                <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                    <ul class="navbar-nav menu">
+                        <li class="nav-item">
+                            <a class="nav-link" aria-current="page" href="../index.html">Inicio</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="../pages/productos.html">Productos</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="../pages/ubicacion.html">Ubicacion</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="../pages/contacto.html">Contacto</a>
+                        </li>
+
+
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <nav class="navbar navbar-light  busqueda-categoria">
+
+            <!--BUSQUEDA DE ARTICULOS-->
+            <div class="d-flex busqueda">
+                <input class="form-control me-2" id="buscar" type="text" placeholder="Buscar producto"
+                    aria-label="Search">
+            </div>
+            <!--SELECCION DE CATEGORIA-->
+            <div class="seleccion">
+                <span>Categorias:</span>
+                <select id="selecCategoria">
+                    <option value="todos">Todos</option>
+                    <option value="macetas">Macetas</option>
+                    <option value="adornos">Adornos</option>
+                    <option value="fuentes">Fuentes</option>
+                </select>
+            </div>
+            <div class="position-absolute end-0 me-4">
+                <button id="boton-carrito"><span id="contadorCarrito">0</span><i
+                        class="material-icons carrito-icon">shopping_cart</i></button>
+            </div>
+        </nav>
+
+    </header>
+
+    <main id="contenedor-productos" class="">
+        <!--ACA SE VA A PINTAR EL CONTENEDOR CON EL ESTILO DE ABAJO
+            
+            <div class="producto">
+                <div class="card" style="width: 18rem;">
+                <img src="" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">Nombre</h5>
+                    <p class="card-text">Descripcion</p>
+                    <p>Precio: </p>    
+                    <a id="boton" href="#" class="btn btn-primary">Comprar</a>
+                </div>
+            </div>
+        </div> -->
+    </main>
+
+    <div class="modal-contenedor">
+        <div class="modal-carrito">
+            <h3>Carrito</h3>
+            <button id="carritoCerrar">X</button>
+            <div id="carrito-contenedor">
+                <!-- ACA SE VA A PINTAR EL CONTENEDOR CON EL ESTILO DE ABAJO
+
+                    <div class="productoEnCarrito">
+                    <p>Buzo 1</p>
+                    <p>Precio: $1200</p>
+                    <button class="boton-eliminar"><i class="fas fa-trash-alt"></i></button>
+                </div>   -->
+            </div>
+            <p class="precioProducto">Precio total: $<span id="precioTotal">0</span></p>
+            <div style="display: flex; justify-content: flex-end;">
+                <button id="terminar" type="button" class="btn btn-success">Efectuar el pago
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                        class="bi bi-credit-card" viewBox="0 0 16 16">
+                        <path
+                            d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V4zm2-1a1 1 0 0 0-1 1v1h14V4a1 1 0 0 0-1-1H2zm13 4H1v5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V7z" />
+                        <path d="M2 10a1 1 0 0 1 1-1h1a1 1 0 0 1 1 1v1a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1v-1z" />
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <div id="card" class="pago-tarjeta">
+        <div id="contenedor_tarjeta" class="modal_tarjeta_container">
+            <h4>Pago con tarjeta</h4>
+
+            <div class="datos">
+                <div class="grupo1" id="numero">
+                    <p class="label p_tarjeta">Numero Tarjeta</p>
+                    <p class="numero p_tarjeta">#### #### #### ####</p>
+                </div>
+                <div class="flexbox">
+                    <div class="grupo2" id="nombre">
+                        <p class="label p_tarjeta">Nombre Tarjeta</p>
+                        <p class="nombre p_tarjeta">jhon doe</p>
+                    </div>
+                    <div class="grupo2" id="codigo">
+                        <p class="label p_tarjeta">CCV</p>
+                        <p class="codigo p_tarjeta">123</p>
+                    </div>
+                </div>
+            </div>
+            <label class="form-label">Nombre</label>
+            <input id="inputNombre" type="text" class="form-control" placeholder="Nombre">
+            <label class="form-label">N° de tarjeta</label>
+            <input id="inputNumero" type="text" class="form-control" maxlength="19" placeholder="XXXX XXXX XXXX XXXX">
+            <label class="form-label">CCV</label>
+            <input id="inputCodigo" type="text" class="form-control" placeholder="XXX">
+
+            <button type="button" class="modal_close">Finalizar compra</button>
+        </div>
+    </div>
+
+
+
+    <script src="../js/modal.js"></script>
+    <script src="../js/app.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+        crossorigin="anonymous"></script>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+    <footer class="footer fixed-bottom">
+        <p class="pfooter">Seguinos en Instagram: <a href="https://www.facebook.com/MyO-Artesanal-106869937729445"
+                target="_blank">
+                <img src="/images/instagram.webp" alt="logo instagram" width="20" height="20"></a></p>
+    </footer>
+</body>
+
+</html>
