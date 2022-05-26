@@ -277,6 +277,7 @@
     max-height: 100%;
     border-radius: 6px;
     padding: 1em 2.5em;
+  
     display: block;
 }
 
@@ -304,10 +305,10 @@
     background-size: cover;
     display: flex;
     flex-direction: column;
-    color: rgb(209, 197, 33);
+    color: #32eb73;
     width: 100%;
     height: 100%;
-    font-size: 25;
+    font-size: 2;
 }
 
 .grupo1{
@@ -335,3 +336,8 @@
 .p_tarjeta{
    margin-bottom: 10px; 
 }   
+
+.grupo1 .numero{
+  font-size: 20px;
+}
+
